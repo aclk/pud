@@ -3,12 +3,12 @@ package common
 import java.io.File
 
 
-interface Doc {
+interface Document {
     fun buildDocContent(): String
 
     fun exportDocCompleted() = run { }
 
-    infix fun export_doc(filePath: String) {
+    infix fun exportDoc(filePath: String) {
         generateDoc(filePath)
     }
 

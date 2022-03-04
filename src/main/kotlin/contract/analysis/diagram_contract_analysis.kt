@@ -52,6 +52,3 @@ object diagram_contract_analysis : DSL<diagram_contract_analysis>, Diagram {
     override fun invoke(function: diagram_contract_analysis.() -> Unit): diagram_contract_analysis =
         apply { function() }
 }
-
-
-

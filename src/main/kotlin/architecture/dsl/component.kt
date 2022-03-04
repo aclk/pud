@@ -21,16 +21,20 @@ data class component(val element: Element) : DSL<component> {
             element.backgroundColor = layer.element.backgroundColor
     }
 
-    fun call(componentName: String, command: String = "") {
-        element.relate(componentName, ASSOCIATE, command)
+    /**
+     * @param name The name of component
+     * @param command The name of operation
+     */
+    fun call(name: String, command: String = "") {
+        element.relate(name, ASSOCIATE, command)
     }
 
     override fun invoke(function: component.() -> Unit): component = apply { function() }
 
     override fun toString(): String = buildString {
         appendLine("$element {\n}")
-        appendLine(element.generateRelationships())
-        process?.let { appendLine(it.element.generateRelationships()) }
-        layer?.let { appendLine(it.element.generateRelationships()) }
+        appendLine(element.generate())
+        process?.let { appendLine(it.element.generate()) }
+        layer?.let { appendLine(it.element.generate()) }
     }
 }

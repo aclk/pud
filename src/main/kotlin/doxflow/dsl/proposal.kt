@@ -51,7 +51,7 @@ class proposal(element: Element, party: Party?, note: String? = null) :
         return buildString {
             appendLine(super.toString())
             appendLine(contract.toString())
-            rfp?.let { appendLine(it.element.generateRelationships()) }
+            rfp?.let { appendLine(it.element.generate()) }
         }
     }
 }

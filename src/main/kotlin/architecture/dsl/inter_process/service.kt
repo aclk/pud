@@ -16,7 +16,7 @@ class service(val element: Element) : DSL<service> {
         return process
     }
 
-    fun call(processName: String, command: String = ""):service {
+    fun call(processName: String, command: String = ""): service {
         element.relate(processName, Diagram.ASSOCIATE, command)
         return this
     }
@@ -37,6 +37,6 @@ class service(val element: Element) : DSL<service> {
             appendLine(it.toString())
         }
         appendLine("}")
-        appendLine(element.generateRelationships())
+        appendLine(element.generate())
     }
 }

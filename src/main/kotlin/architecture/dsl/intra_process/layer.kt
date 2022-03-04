@@ -15,9 +15,10 @@ class layer(val element: Element) : DSL<layer> {
 
     override fun invoke(function: layer.() -> Unit): layer = apply { function() }
 
-    fun generateComponentRelationships():String = buildString {
+    // Generate component relationships
+    fun generate(): String = buildString {
         components.forEach {
-            appendLine(it.element.generateRelationships())
+            appendLine(it.element.generate())
         }
     }
 

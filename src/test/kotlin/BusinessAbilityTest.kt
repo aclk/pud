@@ -1,4 +1,3 @@
-
 import doxflow.models.ability.BusinessAbilityCreator
 import org.junit.Test
 import kotlin.test.assertEquals

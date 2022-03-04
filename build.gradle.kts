@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.6.0"
 }
 
 group = "tech.behring.darkhorse"
@@ -12,9 +12,11 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("script-runtime"))
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    testImplementation(kotlin("test"))
+    implementation("org.jetbrains.kotlin:kotlin-script-runtime:1.6.0")
+    // https://mvnrepository.com/artifact/net.sourceforge.plantuml/plantuml
+    implementation("net.sourceforge.plantuml:plantuml:1.2022.1")
+    // implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
 }
 
 tasks.test {

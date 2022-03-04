@@ -27,4 +27,4 @@ diagram_inter_process {
         process("发票代开服务")
         process("短信发送服务")
     }
-} export "./diagrams/inter_process_diagram.png"
+} exportDiagram "./diagrams/inter_process_diagram.png"

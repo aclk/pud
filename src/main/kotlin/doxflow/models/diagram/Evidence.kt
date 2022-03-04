@@ -27,7 +27,7 @@ abstract class Evidence<T : Any>(
     }
 
     var isRole: Boolean = false
-    var timestamps: Array<out String>? = null
+    private var timestamps: Array<out String>? = null
     private var data: Array<out String>? = null
 
     var relationship: String = DEFAULT
@@ -59,9 +59,9 @@ abstract class Evidence<T : Any>(
         )
     }
 
-    override fun key_timestamps(vararg timestamps: String) = timestamps.let { this.timestamps = it }
+    override fun timestamp(vararg timestamps: String) = timestamps.let { this.timestamps = it }
 
-    override fun key_data(vararg data: String) = data.let { this.data = it }
+    override fun data(vararg data: String) = data.let { this.data = it }
 
     override fun toString(): String = buildString {
         val party = generateParty(party)
@@ -81,7 +81,7 @@ abstract class Evidence<T : Any>(
         evidenceAndRelationship?.let {
             appendLine(it.first.toString())
             it.first.element.relate(element, it.second)
-            appendLine(it.first.element.generateRelationships())
+            appendLine(it.first.element.generate())
         }
     }
 

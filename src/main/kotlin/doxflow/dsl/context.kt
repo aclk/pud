@@ -100,7 +100,7 @@ class context(val element: Element, override var resource: String = "") : Busine
             .flatMap { it }.forEach { appendLine(it.toString()) }
         appendLine("}")
         arrayOf(evidences, roles, participants)
-            .flatMap { it }.forEach { appendLine(it.element.generateRelationships()) }
+            .flatMap { it }.forEach { appendLine(it.element.generate()) }
     }
 
     private fun StringBuilder.addBusinessAbilities(abilityCreator: BusinessAbilityCreator) {

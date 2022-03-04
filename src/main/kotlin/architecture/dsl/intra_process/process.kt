@@ -5,8 +5,8 @@ import common.Element
 
 class process(val element: Element) {
 
-    fun call(componentName: String, command: String = "") {
-        element.relate(componentName, ASSOCIATE, command)
+    fun call(name: String, command: String = "") {
+        element.relate(name, ASSOCIATE, command)
     }
 
     override fun toString(): String = buildString {

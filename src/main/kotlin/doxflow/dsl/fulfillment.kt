@@ -2,7 +2,6 @@ package doxflow.dsl
 
 import common.Element
 import common.Element.Type.CLASS
-import common.IElement
 import doxflow.models.ability.BusinessAbility
 import doxflow.models.diagram.Party
 import doxflow.models.diagram.Relationship
@@ -21,7 +20,7 @@ class fulfillment(
             request()
         }
 
-    fun confirmation(party: Party? = null, confirmation: confirmation.() -> Unit): confirmation =
+    fun confirm(party: Party? = null, confirmation: confirmation.() -> Unit): confirmation =
         confirmation(Element("${name}确认", CLASS), this, party).apply {
             this@fulfillment.confirmation = this
             confirmation()
@@ -37,7 +36,7 @@ class fulfillment(
             appendLine(request.toString())
             appendLine(confirmation.toString())
             request.element.relate(confirmation.element, relationship)
-            appendLine(request.element.generateRelationships())
+            appendLine(request.element.generate())
         }
     }
 }

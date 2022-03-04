@@ -1,9 +1,9 @@
 package contract.content
 
 import common.DSL
-import common.Doc
+import common.Document
 
-object doc_contract_content : DSL<doc_contract_content>, Doc {
+object doc_contract_content : DSL<doc_contract_content>, Document {
     private val contracts: MutableList<contract> = mutableListOf()
     fun contract(name: String, function: contract.() -> Unit) = contract(name).apply {
         contracts.add(this)

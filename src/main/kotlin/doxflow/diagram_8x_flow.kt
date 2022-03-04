@@ -7,7 +7,7 @@ import doxflow.dsl.context
 data class diagram_8x_flow(
     val layoutDirection: Diagram.LayoutDirection = Diagram.LayoutDirection.Vertical,
     val function: diagram_8x_flow.() -> Unit
-) : Diagram, Doc {
+) : Diagram, Document {
 
     private var contexts: MutableList<context> = mutableListOf()
 
@@ -30,9 +30,9 @@ data class diagram_8x_flow(
             context?.let { it() }
         }
 
-    fun export_diagram_and_doc(diagram: String, doc: String) {
-        export(diagram)
-        export_doc(doc)
+    fun exports(diagram: String, doc: String) {
+        exportDiagram(diagram)
+        exportDoc(doc)
     }
 
 

@@ -9,9 +9,11 @@ import common.Element
 import common.Element.Type.CLOUD
 import common.Element.Type.RECTANGLE
 
-class diagram_intra_process(val name: String = "", function: diagram_intra_process.() -> Unit) : DSL<diagram_intra_process>, Diagram {
+class diagram_intra_process(val name: String = "", function: diagram_intra_process.() -> Unit) :
+    DSL<diagram_intra_process>, Diagram {
     private var layers: MutableList<layer> = mutableListOf()
     private val processes: MutableList<process> = mutableListOf()
+
     init {
         function()
     }
@@ -55,10 +57,10 @@ class diagram_intra_process(val name: String = "", function: diagram_intra_proce
         appendLine("}")
         // 最后生成关联关系
         processes.forEach {
-            appendLine(it.element.generateRelationships())
+            appendLine(it.element.generate())
         }
         layers.forEach {
-            appendLine(it.generateComponentRelationships())
+            appendLine(it.generate())
         }
     }
 }

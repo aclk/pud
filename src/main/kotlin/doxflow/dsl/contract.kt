@@ -54,9 +54,9 @@ class contract(element: Element) :
         return buildString {
             appendLine(super.toString())
             if (fulfillments.isNotEmpty()) fulfillments.reversed().forEach { appendLine(it.toString()) }
-            appendLine(element.generateRelationships())
-            proposal?.let { appendLine(it.element.generateRelationships()) }
-            context?.let { appendLine(it.element.generateRelationships()) }
+            appendLine(element.generate())
+            proposal?.let { appendLine(it.element.generate()) }
+            context?.let { appendLine(it.element.generate()) }
         }
     }
 }

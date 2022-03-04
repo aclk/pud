@@ -33,7 +33,7 @@ class confirmation(element: Element, private val fulfillment: fulfillment, party
      * 当前confirmation需要依赖其他confirmation确认
      * 例如：周进度检查确认依赖周进度检查条目确认，条目中包括"专栏选题","文章提交", "专栏立项","交稿确认"等数据项
      * */
-    infix fun dependent_on(confirmation: confirmation) = confirmation.let {
+    infix fun dependent(confirmation: confirmation) = confirmation.let {
         role()
         this.dependentConfirmation = it
     }
@@ -61,7 +61,7 @@ class confirmation(element: Element, private val fulfillment: fulfillment, party
 
     override fun toString(): String = buildString {
         appendLine(super.toString())
-        appendLine(element.generateRelationships())
+        appendLine(element.generate())
         dependentConfirmation?.let {
             appendLine(dependentConfirmation.toString())
             appendLine("""${element.name} $relationship ${it.element.name}""")

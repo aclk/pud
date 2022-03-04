@@ -15,13 +15,13 @@ doc_contract_content {
             request(twPlatform)
             // 乙方必须在10分钟内完成履约
             confirm(realtor)
-            confirm_failure(twPlatform, fulfillment("取消充值订单", "取消充值订单凭证"))
+            failure(twPlatform, fulfillment("取消充值订单", "取消充值订单凭证"))
         }
 
         fulfillment("退款", "退款凭证", "3个工作日") {
             request(realtor)
             confirm(twPlatform)
-            confirm_failure(realtor, prosecute())
+            failure(realtor, prosecute())
         }
 
         fulfillment("余额提现", "余额提现凭证", "3个工作日") {
@@ -34,4 +34,4 @@ doc_contract_content {
             confirm(twPlatform)
         }
     }
-} export_doc "./docs/contract_content_doc.md"
+} exportDoc "./docs/contract_content_doc.md"

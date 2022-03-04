@@ -8,8 +8,10 @@ import common.Element
 import common.Element.Type.RECTANGLE
 import kotlin.random.Random
 
-class diagram_inter_process(val name: String? = null, function: diagram_inter_process.() -> Unit) : DSL<diagram_inter_process>, Diagram {
-    var services: MutableList<service> = mutableListOf()
+class diagram_inter_process(val name: String? = null, function: diagram_inter_process.() -> Unit) :
+    DSL<diagram_inter_process>, Diagram {
+    private var services: MutableList<service> = mutableListOf()
+
     init {
         function()
     }
@@ -26,7 +28,7 @@ class diagram_inter_process(val name: String? = null, function: diagram_inter_pr
         |@startuml
         ${getRectangleStyle()}
         |$RECTANGLE ${Random(1000).nextInt()}[
-        |== <size:20><color:black>${name?:"架构图"}
+        |== <size:20><color:black>${name ?: "架构图"}
         |{{
         ${buildPlantUmlContent()}
         |}}
@@ -40,6 +42,6 @@ class diagram_inter_process(val name: String? = null, function: diagram_inter_pr
 
     private fun buildPlantUmlContent(): String = buildString {
         services.forEach { appendLine(it.toString()) }
-        services.forEach { appendLine(it.element.generateRelationships()) }
+        services.forEach { appendLine(it.element.generate()) }
     }
 }

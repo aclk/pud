@@ -37,7 +37,7 @@ class rfp(element: Element, val context: context, party: Party, note: String? = 
         return buildString {
             appendLine(super.toString())
             appendLine(proposal.toString())
-            appendLine(context.element.generateRelationships())
+            appendLine(context.element.generate())
         }
     }
 }

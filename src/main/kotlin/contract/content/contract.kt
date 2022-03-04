@@ -9,10 +9,13 @@ class contract(val name: String) : DSL<contract> {
     private val parties: MutableList<DSLperson> = mutableListOf()
     private val fulfillments: MutableList<DSLfulfillment> = mutableListOf()
 
+    // 人物
     fun person(party: String, name: String): DSLperson = DSLperson(party, name).apply { parties.add(this) }
 
+    // 起诉
     fun prosecute(): DSLfulfillment = fulfillment("诉讼")
 
+    // 履行
     fun fulfillment(
         name: String,
         evidence: String? = null,

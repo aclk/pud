@@ -23,7 +23,7 @@ interface Diagram {
 
     fun exportResult(isSuccess: Boolean) = run { }
 
-    infix fun export(filePath: String) {
+    infix fun exportDiagram(filePath: String) {
         generateDiagram(filePath)
     }
 
@@ -92,9 +92,9 @@ interface Diagram {
 
 
     interface KeyInfo<T> : DSL<T> {
-        fun key_timestamps(vararg timestamps: String)
+        fun timestamp(vararg timestamps: String)
 
-        fun key_data(vararg data: String)
+        fun data(vararg data: String)
     }
 
     object Color {

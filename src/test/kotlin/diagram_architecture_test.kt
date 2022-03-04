@@ -45,7 +45,7 @@ internal class diagram_architecture_test {
             applicationService above domainService
             coreBusinessService above thirdSystemService
 
-        } export "./diagrams/inter_process_diagram.png"
+        } exportDiagram "./diagrams/inter_process_diagram.png"
     }
 
     @Test
@@ -97,7 +97,7 @@ internal class diagram_architecture_test {
                 process("发票代开服务")
                 process("短信发送服务")
             }
-        } export "./diagrams/lianjia_inter_process_diagram.png"
+        } exportDiagram "./diagrams/lianjia_inter_process_diagram.png"
     }
 
     @Test
@@ -133,7 +133,7 @@ internal class diagram_architecture_test {
             service("第三方系统", DARK_GREY) {
                 process("ADX数据监测系统").call("三方服务网关", "6. POST /3rd-party-gateway/ad-data")
             }
-        } export "./diagrams/lianjia_inter_process_communication_diagram.png"
+        } exportDiagram "./diagrams/lianjia_inter_process_communication_diagram.png"
     }
 
     @Test
@@ -162,6 +162,6 @@ internal class diagram_architecture_test {
             process("MobileBFF")
             process("SqliteDB")
 
-        } export "./diagrams/intra_process_diagram.png"
+        } exportDiagram "./diagrams/intra_process_diagram.png"
     }
 }
