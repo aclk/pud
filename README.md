@@ -61,7 +61,7 @@ clone [8x-flow-diagram](https://github.com/behring/8x-flow-diagram)的代码到�
 * **创建角色对象(Roles)**：包括*合约中的角色(Role)、领域逻辑角色化(Domain)、第三方系统角色化(3rd System)、凭证角色化(Evidence As Role)。*
 * **创建关系**：*关联关系(1对1、1对N、无数量)；扮演角色关系。*  
 
-![8xflow业务建模图图例](./images/8xflow业务建模图图例.png)
+![8xflow业务建模图图例](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/8xflow业务建模图图例.png)
 
 
 
@@ -85,7 +85,7 @@ clone [8x-flow-diagram](https://github.com/behring/8x-flow-diagram)的代码到�
 
 3. 右键该文件运行，在`8x-flow-diagram/diagrams`目录下查看`hello_word_diagram.png`文件。
 
-   ![商品订单合同](./images/hello_word_diagram.png)
+   ![商品订单合同](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/hello_word_diagram.png)
 
 ### 语法介绍
 
@@ -303,11 +303,11 @@ diagram_8x_flow {
 
 ### 图例
 - 专栏订阅协议
-![预充值协议](./images/reader_subscription_diagram.png)
+![预充值协议](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/reader_subscription_diagram.png)
 - 绩效协议
-![信息推广服务合同](./images/editor_performance_diagram.png)
+![信息推广服务合同](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/editor_performance_diagram.png)
 - 商品订单合同
-![商品订单合同](./images/contract_with_rfp_diagram.png)
+![商品订单合同](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/contract_with_rfp_diagram.png)
 
 
 
@@ -321,11 +321,11 @@ diagram_8x_flow {
 
 - 进程间架构图
 
-![](./images/inter-process-example.png)
+![](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/inter-process-example.png)
 
 - 一部分进程间架构交互图
 
-![](./images/inter-process-communication.png)
+![](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/inter-process-communication.png)
 
 ### 创建一个简单进程间架构图
 
@@ -369,7 +369,7 @@ diagram_8x_flow {
 
 3. 右键该文件运行，在`8x-flow-diagram/src/main/kotlin/architecture/samples/diagrams`目录下查看`inter_process_diagram.png`文件。
 
-   ![inter_process_diagram](./images/inter_process_diagram.png)
+   ![inter_process_diagram](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/inter_process_diagram.png)
 
 ### 语法介绍
 
@@ -423,7 +423,7 @@ diagram_inter_process {
 
 ### 图例
 
-![](./images/lianjia_inter_process_communication_diagram.png)
+![](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/lianjia_inter_process_communication_diagram.png)
 
 
 
@@ -435,7 +435,7 @@ diagram_inter_process {
 
 - 进程内架构图
 
-  <img src="./images/intra-process-sample.png" alt="intra-process-sample" style="zoom:50%;" />
+  <img src="https://cdn.jsdelivr.net/gh/aclk/pud@main/images/intra-process-sample.png" alt="intra-process-sample" style="zoom:50%;" />
 
 ### 语法介绍
 
@@ -523,7 +523,7 @@ diagram_intra_process {
 
 ### 图例
 
-![](./images/intra_process_diagram.png)
+![](https://cdn.jsdelivr.net/gh/aclk/pud@main/images/intra_process_diagram.png)
 
 ## 后续开发计划
 - 生成合约分析中的凭证。DONE
